@@ -2,40 +2,249 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>JS基础作业</title>
+    <title>JS 基础知识练习</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 20px auto; padding: 0 20px; }
+        h1 { color: #333; text-align: center; }
+        .section { margin: 30px 0; padding: 20px; border: 1px solid #eee; border-radius: 8px; background: #f9f9f9; }
+        h2 { color: #555; border-bottom: 2px solid #007bff; padding-bottom: 8px; }
+        pre { background: #f4f4f4; padding: 15px; border-radius: 6px; overflow-x: auto; color: #d63384; }
+        p { color: #666; line-height: 1.6; }
+    </style>
 </head>
 <body>
+    <h1>JavaScript 基础知识综合练习</h1>
+
+    <!-- 变量定义与类型模块 -->
+    <div class="section">
+        <h2>1. 变量定义 & 变量类型练习</h2>
+        <p>下面代码展示了 JS 中不同类型变量的定义（字符串、数字、布尔、数组、对象），打开浏览器控制台可查看结果：</p >
+        <pre>
+// 1. 变量定义（使用 let/const 声明，避免 var 变量提升问题）
+let userName = "前端学习小能手"; // 字符串类型
+let userAge = 20; // 数字类型（Number）
+let isStudent = true; // 布尔类型（Boolean）
+let hobbies = ["JavaScript", "HTML", "CSS"]; // 数组类型（Array）
+let userInfo = { // 对象类型（Object）
+    major: "Web前端开发",
+    school: "XX大学",
+    grade: "2024级"
+};
+
+// 2. 打印变量类型（用 typeof 验证）
+console.log("用户名：", userName, " | 类型：", typeof userName);
+console.log("年龄：", userAge, " | 类型：", typeof userAge);
+console.log("是否学生：", isStudent, " | 类型：", typeof isStudent);
+console.log("爱好数组：", hobbies, " | 类型：", typeof hobbies);
+console.log("用户信息对象：", userInfo, " | 类型：", typeof userInfo);
+        </pre>
+    </div>
+
+    <!-- 表达式模块 -->
+    <div class="section">
+        <h2>2. 表达式练习（算术/比较/逻辑运算）</h2>
+        <p>覆盖常用表达式，直接复制到 script 标签中运行查看结果：</p >
+        <pre>
+// 1. 算术表达式
+let num1 = 10;
+let num2 = 3;
+let addResult = num1 + num2; // 加法
+let subResult = num1 - num2; // 减法
+let mulResult = num1 * num2; // 乘法
+let divResult = num1 / num2; // 除法
+let modResult = num1 % num2; // 取余
+
+// 2. 比较表达式
+let isEqual = num1 === num2; // 严格相等
+let isGreater = num1 > num2; // 大于
+let isLess = num1 < num2; // 小于
+
+// 3. 逻辑表达式
+let logicAnd = isGreater && isLess; // 逻辑与（且）
+let logicOr = isGreater || isLess; // 逻辑或
+let logicNot = !isEqual; // 逻辑非（取反）
+
+// 打印表达式结果
+console.log("10 + 3 =", addResult);
+console.log("10 - 3 =", subResult);
+console.log("10 * 3 =", mulResult);
+console.log("10 / 3 =", divResult.toFixed(2)); // 保留2位小数
+console.log("10 % 3 =", modResult);
+console.log("10 === 3 ?", isEqual);
+console.log("10 > 3 ?", isGreater);
+console.log("逻辑与 &&：", logicAnd);
+console.log("逻辑或 ||：", logicOr);
+        </pre>
+    </div>
+
+    <!-- 流程控制模块 -->
+    <div class="section">
+        <h2>3. 流程控制练习（if-else / switch / for / while）</h2>
+        <p>包含分支结构和循环结构，覆盖所有常用流程控制方式：</p >
+        <pre>
+// 1. 分支流程 - if-else 语句
+let score = 85; // 模拟考试分数
+if (score >= 90) {
+    console.log("成绩等级：A（优秀）");
+} else if (score >= 80) {
+    console.log("成绩等级：B（良好）");
+} else if (score >= 60) {
+    console.log("成绩等级：C（及格）");
+} else {
+    console.log("成绩等级：D（不及格）");
+}
+
+// 2. 分支流程 - switch 语句
+let grade = "B";
+switch (grade) {
+    case "A":
+        console.log("表现：优秀，奖励一次实践机会");
+        break;
+    case "B":
+        console.log("表现：良好，继续保持");
+        break;
+    case "C":
+        console.log("表现：及格，需要加强练习");
+        break;
+    default:
+        console.log("表现：不及格，需补考");
+}
+
+// 3. 循环流程 - for 循环（遍历数组）
+let courses = ["JavaScript", "HTML", "CSS", "Vue"];
+console.log("--- for 循环遍历课程 ---");
+for (let i = 0; i < courses.length; i++) {
+    console.log("第", i+1, "门课：", courses[i]);
+}
+
+// 4. 循环流程 - while 循环（打印1-5）
+console.log("--- while 循环打印1-5 ---");
+let count = 1;
+while (count <= 5) {
+    console.log("计数：", count);
+    count++;
+}
+        </pre>
+    </div>
+
+    <!-- 函数模块 -->
+    <div class="section">
+        <h2>4. 函数练习（声明/调用/参数/返回值）</h2>
+        <p>封装常用功能，展示函数的定义、传参和返回值使用方式：</p >
+        <pre>
+// 1. 普通函数声明（无返回值）
+function greetUser(name) {
+    console.log("Hello, " + name + "！欢迎来到JS练习页面！");
+}
+// 调用函数
+greetUser("前端学习者");
+
+// 2. 带返回值的函数（计算两数之和）
+function addNumbers(a, b) {
+    return a + b;
+}
+// 调用并接收返回值
+let sum = addNumbers(15, 27);
+console.log("15 + 27 =", sum);
+
+// 3. 箭头函数（ES6 简化写法）
+const multiply = (x, y) => x * y;
+// 调用箭头函数
+let product = multiply(6, 8);
+console.log("6 * 8 =", product);
+
+// 4. 高阶函数（以数组遍历为例）
+let numbers = [1, 2, 3, 4, 5];
+console.log("--- 数组每个元素乘2（高阶函数map） ---");
+let doubleNumbers = numbers.map(num => num * 2);
+console.log("原数组：", numbers);
+console.log("处理后：", doubleNumbers);
+        </pre>
+    </div>
+
+    <!-- 执行入口 -->
     <script>
-        // -------- 1. 变量定义与类型 --------
-        let name = "张三";          // 字符串
-        let age = 18;               // 数字
-        let isPass = true;          // 布尔值
-        const PI = 3.14;            // 常量
+        // 👇 把上面所有模块的代码，按顺序复制到这里，运行即可完成所有练习
+        // ====================== 变量定义与类型 ======================
+        let userName = "前端学习小能手";
+        let userAge = 20;
+        let isStudent = true;
+        let hobbies = ["JavaScript", "HTML", "CSS"];
+        let userInfo = {
+            major: "Web前端开发",
+            school: "XX大学",
+            grade: "2024级"
+        };
 
-        // -------- 2. 表达式 --------
-        let sum = 10 + 20;          // 算术表达式
-        let isAdult = age >= 18;    // 逻辑表达式
+        console.log("===== 变量与类型 =====");
+        console.log("用户名：", userName, " | 类型：", typeof userName);
+        console.log("年龄：", userAge, " | 类型：", typeof userAge);
+        console.log("是否学生：", isStudent, " | 类型：", typeof isStudent);
+        console.log("爱好数组：", hobbies, " | 类型：", typeof hobbies);
+        console.log("用户信息对象：", userInfo, " | 类型：", typeof userInfo);
 
-        // -------- 3. 流程控制 --------
-        if (isAdult) {
-            console.log("你是成年人");
+        // ====================== 表达式 ======================
+        let num1 = 10;
+        let num2 = 3;
+        let addResult = num1 + num2;
+        let subResult = num1 - num2;
+        let mulResult = num1 * num2;
+        let divResult = num1 / num2;
+        let modResult = num1 % num2;
+        let isEqual = num1 === num2;
+        let isGreater = num1 > num2;
+        let logicAnd = isGreater && isEqual;
+
+        console.log("===== 表达式 =====");
+        console.log("10 + 3 =", addResult);
+        console.log("10 - 3 =", subResult);
+        console.log("10 * 3 =", mulResult);
+        console.log("10 / 3 =", divResult.toFixed(2));
+        console.log("10 % 3 =", modResult);
+        console.log("10 === 3 ?", isEqual);
+        console.log("逻辑与 &&：", logicAnd);
+
+        // ====================== 流程控制 ======================
+        let score = 85;
+        if (score >= 90) {
+            console.log("成绩等级：A（优秀）");
+        } else if (score >= 80) {
+            console.log("成绩等级：B（良好）");
         } else {
-            console.log("你是未成年人");
+            console.log("成绩等级：C（及格/不及格）");
         }
 
-        // 循环
-        for(let i = 0; i < 3; i++) {
-            console.log("循环次数：", i);
+        let grade = "B";
+        switch (grade) {
+            case "A":
+                console.log("表现：优秀");
+                break;
+            case "B":
+                console.log("表现：良好");
+                break;
+            default:
+                console.log("表现：需努力");
         }
 
-        // -------- 4. 函数 --------
-        function add(a, b) {
+        let courses = ["JavaScript", "HTML", "CSS"];
+        console.log("===== for 循环遍历课程 =====");
+        for (let i = 0; i < courses.length; i++) {
+            console.log("第", i+1, "门：", courses[i]);
+        }
+
+        // ====================== 函数 ======================
+        function greetUser(name) {
+            console.log("Hello, " + name + "！JS练习完成！");
+        }
+        greetUser("作业提交者");
+
+        function addNumbers(a, b) {
             return a + b;
         }
-        let result = add(5, 3);     // 调用函数
+        console.log("15 + 27 =", addNumbers(15, 27));
 
-        // 弹出提示框
-        alert("JS作业完成！控制台查看结果（按F12）");
+        const multiply = (x, y) => x * y;
+        console.log("6 * 8 =", multiply(6, 8));
     </script>
 </body>
 </html>
