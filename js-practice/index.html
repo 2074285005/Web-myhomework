@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>JS基础作业</title>
+</head>
+<body>
+    <script>
+        // -------- 1. 变量定义与类型 --------
+        let name = "张三";          // 字符串
+        let age = 18;               // 数字
+        let isPass = true;          // 布尔值
+        const PI = 3.14;            // 常量
+
+        // -------- 2. 表达式 --------
+        let sum = 10 + 20;          // 算术表达式
+        let isAdult = age >= 18;    // 逻辑表达式
+
+        // -------- 3. 流程控制 --------
+        if (isAdult) {
+            console.log("你是成年人");
+        } else {
+            console.log("你是未成年人");
+        }
+
+        // 循环
+        for(let i = 0; i < 3; i++) {
+            console.log("循环次数：", i);
+        }
+
+        // -------- 4. 函数 --------
+        function add(a, b) {
+            return a + b;
+        }
+        let result = add(5, 3);     // 调用函数
+
+        // 弹出提示框
+        alert("JS作业完成！控制台查看结果（按F12）");
+    </script>
+</body>
+</html>
